@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="favBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="favSHGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9FAFB"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#favBgGrad)"/>
+
+  <!-- S ساده شده برای سایز کوچک -->
+  <path
+    d="M18 40V26c0-3 2.2-5 5.2-5h8c3 0 5.2 2 5.2 5 0 3-2.2 5-5.2 5h-6
+       c-3.2 0-5.2 1.8-5.2 4.8 0 3 2 5.2 5.2 5.2h11"
+    fill="none"
+    stroke="url(#favSHGrad)"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

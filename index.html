@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shahab Hosseini | Portfolio</title>
+    <meta name="description" content="Shahab Hosseini - Frontend Developer & Computer Engineering Student. Portfolio, Resume, Projects and Contact." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+    <!-- پس‌زمینه ذرات -->
+    <canvas id="bg-particles"></canvas>
+
+    <!-- دکمه برگشت به بالا -->
+    <button id="back-to-top" aria-label="Back to top">
+        <span>&uarr;</span>
+    </button>
+
+    <!-- هدر -->
+    <header class="site-header glass">
+        <div class="container nav-container">
+            <!-- لوگو -->
+<a href="#hero" class="logo" aria-label="Shahab Hosseini Home">
+    <!-- LOGO STYLE 1 – نسخه ارتقایافته -->
+    <svg class="logo-svg" viewBox="0 0 72 72" aria-hidden="true">
+        <defs>
+            <!-- گرادیان پس‌زمینه (واقعی‌تر و پریمیوم‌تر) -->
+            <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0F172A" />
+                <stop offset="50%" stop-color="#020617" />
+                <stop offset="100%" stop-color="#020617" />
+            </linearGradient>
+
+            <!-- گرادیان دور قاب -->
+            <linearGradient id="logoBorderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#38BDF8" />
+                <stop offset="100%" stop-color="#818CF8" />
+            </linearGradient>
+
+            <!-- رنگ حروف -->
+            <linearGradient id="logoSHGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F9FAFB" />
+                <stop offset="100%" stop-color="#E5E7EB" />
+            </linearGradient>
+
+            <!-- هاله خیلی ملایم -->
+            <filter id="logoSoftShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.35" />
+            </filter>
+        </defs>
+
+        <!-- بلوک گرد اصلی -->
+        <rect
+            x="4"
+            y="4"
+            width="64"
+            height="64"
+            rx="18"
+            fill="url(#logoBgGrad)"
+            stroke="url(#logoBorderGrad)"
+            stroke-width="1.5"
+            filter="url(#logoSoftShadow)"
+        />
+
+        <!-- قاب داخلی خیلی لطیف -->
+        <rect
+            x="10"
+            y="10"
+            width="52"
+            height="52"
+            rx="16"
+            fill="none"
+            stroke="rgba(148, 163, 184, 0.35)"
+            stroke-width="1"
+        />
+
+        <!-- SH Monogram – نسخه تمیز شده -->
+        <!-- S -->
+        <path
+            d="
+                M 20 44
+                L 20 26
+                Q 20 20 26 20
+                L 36 20
+                Q 42 20 42 26
+                Q 42 32 36 32
+                L 28 32
+                Q 22 32 22 38
+                Q 22 44 28 44
+                L 40 44
+                Q 46 44 46 38
+                L 46 36
+            "
+            fill="none"
+            stroke="url(#logoSHGrad)"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <!-- H -->
+        <path
+            d="
+                M 50 20
+                L 50 44
+                M 62 20
+                L 62 44
+                M 50 32
+                L 62 32
+            "
+            fill="none"
+            stroke="url(#logoSHGrad)"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <!-- دو خط راهنمای ظریف برای حس علمی -->
+        <line
+            x1="16"
+            y1="26"
+            x2="16"
+            y2="44"
+            stroke="rgba(148, 163, 184, 0.3)"
+            stroke-width="1.2"
+            stroke-linecap="round"
+        />
+        <line
+            x1="20"
+            y1="50"
+            x2="56"
+            y2="50"
+            stroke="rgba(148, 163, 184, 0.18)"
+            stroke-width="1"
+            stroke-linecap="round"
+        />
+    </svg>
+
+    <span class="logo-text">
+        <span class="logo-name">Shahab Hosseini</span>
+        <span class="logo-role" data-i18n="logo.role">Frontend Developer</span>
+    </span>
+</a>
+
+
+            <!-- ناوبری -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#about" data-i18n="nav.about">درباره من</a></li>
+                    <li><a href="#skills" data-i18n="nav.skills">مهارت‌ها</a></li>
+                    <li><a href="#projects" data-i18n="nav.projects">پروژه‌ها</a></li>
+                    <li><a href="#resume" data-i18n="nav.resume">رزومه</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">تماس</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- سوییچر زبان -->
+                <button id="lang-toggle" class="icon-btn" aria-label="Switch language">
+                    <span class="lang-label">FA</span>
+                </button>
+
+                <!-- سوییچر تم -->
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <span class="theme-icon">☾</span>
+                </button>
+
+                <!-- منوی موبایل -->
+                <button id="mobile-menu-toggle" class="icon-btn mobile-only" aria-label="Toggle navigation">
+                    <span class="burger"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- منوی موبایل -->
+        <nav id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="#about" data-i18n="nav.about">درباره من</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">مهارت‌ها</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">پروژه‌ها</a></li>
+                <li><a href="#resume" data-i18n="nav.resume">رزومه</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- سکشن هیرو -->
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="hero-kicker" data-i18n="hero.kicker">سلام، من</p>
+                    <h1 class="hero-title">
+                        <span class="accent">Shahab Hosseini</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typed-text" data-i18n="hero.typed">Frontend Developer & Computer Engineering Student</span>
+                        <span class="typed-cursor">|</span>
+                    </h2>
+                    <p class="hero-description" data-i18n="hero.desc">
+                        دانشجوی مهندسی کامپیوتر و توسعه‌دهنده‌ی فرانت‌اند؛ عاشق ساختن رابط‌های کاربری سریع، تمیز و مدرن برای وب.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn primary" data-i18n="hero.ctaPrimary">مشاهده پروژه‌ها</a>
+                        <a href="#contact" class="btn ghost" data-i18n="hero.ctaSecondary">ارتباط با من</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">10+</span>
+                            <span class="stat-label" data-i18n="hero.statProjects">پروژه کوچک تمرینی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4</span>
+                            <span class="stat-label" data-i18n="hero.statSemester">ترم تجربه دانشگاهی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">24/7</span>
+                            <span class="stat-label" data-i18n="hero.statAvailability">آماده همکاری ریموت</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card glass">
+                    <div class="hero-avatar">
+                        <div class="avatar-circle"></div>
+                        <div class="avatar-glow"></div>
+                        <span class="avatar-initials">SH</span>
+                    </div>
+                    <div class="hero-meta">
+                        <div>
+                            <p class="meta-label" data-i18n="hero.metaRoleLabel">نقش</p>
+                            <p class="meta-value" data-i18n="hero.metaRole">Front-End Developer</p>
+                        </div>
+                        <div>
+                            <p class="meta-label" data-i18n="hero.metaLocationLabel">موقعیت</p>
+                            <p class="meta-value" data-i18n="hero.metaLocation">ایران · Remote</p>
+                        </div>
+                        <div>
+                            <p class="meta-label" data-i18n="hero.metaFocusLabel">تمرکز</p>
+                            <p class="meta-value" data-i18n="hero.metaFocus">JavaScript, UI, Performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- درباره من -->
+        <section id="about" class="section">
+            <div class="container section-grid">
+                <div>
+                    <h2 class="section-title" data-i18n="about.title">درباره من</h2>
+                    <p class="section-subtitle" data-i18n="about.subtitle">
+                        ترکیب دانش دانشگاهی مهندسی کامپیوتر با تجربه‌ی عملی در توسعهٔ وب.
+                    </p>
+                </div>
+                <div class="section-content">
+                    <p data-i18n="about.p1">
+                        من شهاب هستم، دانشجوی ترم ۴ مهندسی کامپیوتر و علاقه‌مند به دنیای فرانت‌اند. تمرکزم روی ساخت رابط‌های کاربری
+                        تمیز، قابل‌نگهداری و واکنش‌گراست؛ بدون استفاده از قالب‌های آماده و با تکیه بر HTML, CSS و JavaScript خالص.
+                    </p>
+                    <p data-i18n="about.p2">
+                        هدف من در کوتاه‌مدت، همکاری با تیم‌ها و کارفرماهایی است که به کیفیت کد، طراحی مدرن و ارتباط شفاف اهمیت می‌دهند.
+                        این سایت نمونه‌ای از سبک کاری و استانداردی است که در پروژه‌هایم دنبال می‌کنم.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="about-item">
+                            <span class="badge">Code</span>
+                            <p data-i18n="about.highlight1">تمرکز روی ساخت از صفر، بدون تمپلیت آماده.</p>
+                        </div>
+                        <div class="about-item">
+                            <span class="badge">UI</span>
+                            <p data-i18n="about.highlight2">توجه ویژه به جزئیات UX و ریسپانسیو بودن.</p>
+                        </div>
+                        <div class="about-item">
+                            <span class="badge">Growth</span>
+                            <p data-i18n="about.highlight3">یادگیری مداوم و به‌روزرسانی مهارت‌ها.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- مهارت‌ها -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="skills.title">مهارت‌ها</h2>
+                    <p class="section-subtitle" data-i18n="skills.subtitle">
+                        استک فعلی من و تکنولوژی‌هایی که با آن‌ها کار کرده‌ام.
+                    </p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card glass">
+                        <h3 data-i18n="skills.frontendTitle">Frontend</h3>
+                        <ul>
+                            <li>HTML5 / CSS3</li>
+                            <li>Modern JavaScript (ES6+)</li>
+                            <li data-i18n="skills.responsive">طراحی واکنش‌گرا (Responsive)</li>
+                            <li data-i18n="skills.ui">طراحی UI مدرن</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card glass">
+                        <h3 data-i18n="skills.toolsTitle">ابزارها</h3>
+                        <ul>
+                            <li>VS Code</li>
+                            <li>Git & GitHub</li>
+                            <li>Chrome DevTools</li>
+                            <li data-i18n="skills.design">طراحی ساده با Figma / ابزارهای مشابه</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card glass">
+                        <h3 data-i18n="skills.softTitle">مهارت‌های نرم</h3>
+                        <ul>
+                            <li data-i18n="skills.communication">ارتباط شفاف با کارفرما</li>
+                            <li data-i18n="skills.problemSolving">حل مسئله و دیباگ</li>
+                            <li data-i18n="skills.selfLearning">خودآموزی و تحقیق</li>
+                            <li data-i18n="skills.time">مدیریت زمان پروژه‌های کوچک</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- پروژه‌ها -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="projects.title">پروژه‌ها</h2>
+                    <p class="section-subtitle" data-i18n="projects.subtitle">
+                        چند نمونه از کارها و تمرین‌هایی که برای تقویت مهارت‌هام انجام داده‌ام.
+                    </p>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card glass">
+                        <div class="project-badge">HTML · CSS</div>
+                        <h3 data-i18n="projects.p1.title">لندینگ پیج شخصی</h3>
+                        <p data-i18n="projects.p1.desc">
+                            طراحی یک لندینگ پیج تمیز و واکنش‌گرا با تمرکز روی تایپوگرافی و ساختار صحیح HTML برای سئو.
+                        </p>
+                        <div class="project-meta">
+                            <span data-i18n="projects.p1.role">نقش: طراحی + کدنویسی</span>
+                        </div>
+                    </article>
+                    <article class="project-card glass">
+                        <div class="project-badge">JavaScript</div>
+                        <h3 data-i18n="projects.p2.title">صفحه To-Do مینیمال</h3>
+                        <p data-i18n="projects.p2.desc">
+                            ساخت یک اپ ساده مدیریت کارها با جاوااسکریپت خالص، شامل افزودن، حذف و ذخیره‌سازی در LocalStorage.
+                        </p>
+                        <div class="project-meta">
+                            <span data-i18n="projects.p2.role">نقش: پیاده‌سازی منطق و UI</span>
+                        </div>
+                    </article>
+                    <article class="project-card glass">
+                        <div class="project-badge">Responsive</div>
+                        <h3 data-i18n="projects.p3.title">سایت چندبخشی تمرینی</h3>
+                        <p data-i18n="projects.p3.desc">
+                            تمرین طراحی چند سکشن (درباره، خدمات، تماس) با تمرکز روی گرید، فلکس و نقاط شکست ریسپانسیو.
+                        </p>
+                        <div class="project-meta">
+                            <span data-i18n="projects.p3.role">نقش: طراحی Layout</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- رزومه و Timeline -->
+        <section id="resume" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="resume.title">رزومه و مسیر</h2>
+                    <p class="section-subtitle" data-i18n="resume.subtitle">
+                        نگاهی کوتاه به مسیر تحصیلی و تجربی من در دنیای مهندسی کامپیوتر و وب.
+                    </p>
+                </div>
+
+                <div class="resume-grid">
+                    <!-- Education / Experience Timeline -->
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content glass">
+                                <span class="timeline-label" data-i18n="resume.eduLabel">تحصیل</span>
+                                <h3 data-i18n="resume.eduTitle">مهندسی کامپیوتر · کارشناسی</h3>
+                                <p class="timeline-meta">2022 - Present</p>
+                                <p data-i18n="resume.eduDesc">
+                                    شروع تحصیل در رشته مهندسی کامپیوتر و هم‌زمان یادگیری عملی HTML, CSS و JavaScript برای ورود به بازار کار.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content glass">
+                                <span class="timeline-label" data-i18n="resume.selfLabel">Self-Study</span>
+                                <h3 data-i18n="resume.selfTitle">خودآموزی فرانت‌اند</h3>
+                                <p class="timeline-meta">2023 - Present</p>
+                                <p data-i18n="resume.selfDesc">
+                                    انجام پروژه‌های تمرینی، خواندن مستندات رسمی و تماشای دوره‌های آنلاین برای تقویت اصول فرانت‌اند.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content glass">
+                                <span class="timeline-label" data-i18n="resume.futureLabel">Next</span>
+                                <h3 data-i18n="resume.futureTitle">همکاری با تیم‌ها و فریلنس</h3>
+                                <p class="timeline-meta" data-i18n="resume.futureMeta">هدف کوتاه‌مدت</p>
+                                <p data-i18n="resume.futureDesc">
+                                    همکاری روی پروژه‌های واقعی، ارتقای کیفیت پورتفولیو و ساخت رزومه‌ای که برای کارفرماها قابل اتکا باشد.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary / Download -->
+                    <div class="resume-summary glass">
+                        <h3 data-i18n="resume.summaryTitle">خلاصه رزومه</h3>
+                        <p data-i18n="resume.summaryDesc">
+                            من در حال حاضر روی پروژه‌های کوچک تمرینی کار می‌کنم و آماده‌ام روی پروژه‌های واقعی وب در نقش فرانت‌اند دولوپر همکاری کنم.
+                            تمرکزم روی تمیز بودن کد، ساختار درست و تجربه کاربری روان است.
+                        </p>
+                        <ul class="resume-highlights">
+                            <li data-i18n="resume.highlight1">آشنایی با مفاهیم پایه مهندسی نرم‌افزار و الگوریتم‌ها.</li>
+                            <li data-i18n="resume.highlight2">تجربه کار با Git و GitHub برای مدیریت نسخه.</li>
+                            <li data-i18n="resume.highlight3">توانایی ارتباط با کارفرما و فهم نیازهای پروژه.</li>
+                        </ul>
+                        <a href="#contact" class="btn primary" data-i18n="resume.ctaContact">آماده همکاری · تماس بگیرید</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- تماس -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="contact.title">ارتباط با من</h2>
+                    <p class="section-subtitle" data-i18n="contact.subtitle">
+                        اگر پروژه‌ای در ذهن دارید یا به دنبال همکاری هستید، خوشحال می‌شوم صحبت کنیم.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info glass">
+                        <h3 data-i18n="contact.preferTitle">روش‌های ترجیحی ارتباط</h3>
+                        <ul>
+                            <li>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:youremail@example.com">youremail@example.com</a>
+                            </li>
+                            <li>
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/your-github" target="_blank" rel="noopener">
+                                    github.com/your-github
+                                </a>
+                            </li>
+                            <li>
+                                <span class="contact-label" data-i18n="contact.locationLabel">موقعیت</span>
+                                <span data-i18n="contact.location">ایران · Remote</span>
+                            </li>
+                        </ul>
+                        <p class="contact-note" data-i18n="contact.note">
+                            معمولاً در همان روز پاسخ‌گو هستم. برای همکاری پروژه‌ای، لطفاً در مورد محدوده کار، ددلاین و بودجه تقریبی توضیح دهید.
+                        </p>
+                    </div>
+
+                    <form class="contact-form glass">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="name" data-i18n="contact.form.name">نام</label>
+                                <input type="text" id="name" name="name" placeholder="شهاب حسینی" />
+                            </div>
+                            <div class="form-field">
+                                <label for="email" data-i18n="contact.form.email">ایمیل</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" />
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="subject" data-i18n="contact.form.subject">موضوع</label>
+                            <input type="text" id="subject" name="subject" placeholder="همکاری روی یک پروژه وب" />
+                        </div>
+                        <div class="form-field">
+                            <label for="message" data-i18n="contact.form.message">پیام</label>
+                            <textarea id="message" name="message" rows="4" placeholder="توضیح کوتاه در مورد پروژه یا درخواست شما"></textarea>
+                        </div>
+                        <button type="submit" class="btn primary" data-i18n="contact.form.submit">ارسال (دمو – بدون بک‌اند)</button>
+                        <p class="form-note" data-i18n="contact.form.note">
+                            این فرم فعلاً به بک‌اند متصل نیست؛ می‌توانید برای ارتباط مستقیم از ایمیل استفاده کنید.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر حرفه‌ای -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- از همان لوگوی نوع ۲ استفاده می‌کنیم -->
+                    <svg class="logo-svg footer-logo-svg" viewBox="0 0 64 64" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#22D3EE" />
+                                <stop offset="100%" stop-color="#8B5CF6" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="6" y="6" width="52" height="52" rx="18" fill="#020617" />
+                        <rect x="10" y="10" width="44" height="44" rx="16" fill="url(#footerGrad)" opacity="0.25" />
+                        <path d="M22 40c0 3.8 3.2 7 8.5 7 4.5 0 7.5-2.3 8.3-5.8M22 24c0-3.8 3.2-7 8.5-7 4.5 0 7.5 2.3 8.3 5.8"
+                              fill="none" stroke="#E5E7EB" stroke-width="3" stroke-linecap="round" />
+                        <path d="M22 22v20M42 22v20M22 32h20"
+                              fill="none" stroke="#F9FAFB" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                    <span class="footer-name">Shahab Hosseini</span>
+                </div>
+                <p class="footer-text" data-i18n="footer.text">
+                    ساخته شده با HTML, CSS و JavaScript خالص؛ بدون استفاده از قالب آماده.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer.linksTitle">لینک‌های سریع</h4>
+                <ul>
+                    <li><a href="#projects" data-i18n="footer.projects">پروژه‌ها</a></li>
+                    <li><a href="#resume" data-i18n="footer.resume">رزومه</a></li>
+                    <li><a href="#contact" data-i18n="footer.contact">تماس</a></li>
+                </ul>
+            </div>
+            <div class="footer-extra">
+                <h4 data-i18n="footer.statusTitle">وضعیت همکاری</h4>
+                <p class="footer-status" data-i18n="footer.status">
+                    در حال حاضر برای همکاری فریلنس و ریموت در پروژه‌های فرانت‌اند در دسترس هستم.
+                </p>
+                <p class="footer-copy">
+                    © <span id="year"></span> Shahab Hosseini
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
